@@ -1,10 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import faker from 'faker';
+import Person from './Person';
+import Approvalcard from './Approvalcard';
+
+
 import * as serviceWorker from './serviceWorker';
 
+const App = () =>{
+  return (
+    <div className="ui container comments">
+      <h2 > Blog Site </h2>
+      <Approvalcard>
+           <Person 
+              name={faker.name.firstName()} 
+              day = {faker.date.weekday()} 
+              image ={faker.image.avatar()} 
+              jobTitle ={faker.name.title()}/>
+      </Approvalcard>
+      <Approvalcard>
+           <Person 
+               name={faker.name.firstName()} 
+               day = {faker.date.weekday()} 
+               image ={faker.image.avatar()} 
+               jobTitle ={faker.name.title()}/>
+      </Approvalcard>
+      </div>
+  )
+};
 ReactDOM.render(
+
   <React.StrictMode>
     <App />
   </React.StrictMode>,
